@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGM Auto Car</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="header navbar-expand-lg navbar bg-body-tertiary sticky-top px-md-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2 fw-medium" href="#"><i>Car Dealership</i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="offcanvasNavbar"aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-medium" id="offcanvasNavbarLabel"><i>Car Dealership</i></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center gap-3 flex-grow-1 pe-3 fw-medium">
+          <li class="nav-item">
+            <a class="nav-link fs-5" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="#">App</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex align-items-center mt-3 mt-md-0 gap-2" role="search">
+          <input class="form-control mt-2" type="search" placeholder="Search Find Model" aria-label="Search" />
+          <i style="cursor: pointer;"  class="bi bi-shop fs-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"></i>
+          <div class=" active-cart">0</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</nav>
+
+
+<!-- Hero Section -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.pinimg.com/1200x/65/ff/d7/65ffd7d2ebdd1d562d81316fa065979f.jpg"
+        class="d-block w-100" alt="Vegetables">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/1200x/c4/4d/b7/c44db751dda9877e2ca7a7d72c292a04.jpg"
+        class="d-block w-100" alt="Healthy Food">
+     
+    </div>
+    <div class="carousel-caption">
+        <h1>Welcome to Car Dealership </h1>
+        <p class=" mt-3">Order a super car through an official dealer. Choose model, customize, and confirm purchase.</p>
+        <a href="#menu" class="btn btn-success btn p-2  mt-1">View Models</a>
+        <a href="#contect" class="btn btn-danger btn p-2  mt-1">Contact Buy</a>
+      </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+      
+
+ <!-- Menu -->
+  
+ <!-- Super car Models Section -->
+  <div id="menu" class=" container-fluid py-5">
+    <h2 class=" mb-4">Our Super car Models</h2>
+    <div  id="show-products" class="row g-4">
+      
+  </div>
+</div>
+
+
+  <!-- Download App Section -->
+  <section id="app" class="py-5 bg-light text-center">
+    <div class="container">
+      <h1 class="mb-3">Download Our App</h1>
+      <p class="mb-4 fs-5 text-muted">Browse, customize, and reserve your dream super car all from your phone. Available on iOS and Android.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#" class="app-btn">
+          <img src="https://img.favpng.com/18/23/8/app-store-apple-download-logo-png-favpng-2BMS9KidgmX2fHMtAhjpVHway.jpg" alt="App Store" class=" rounded image-logo">
+        </a>
+        <a href="#" class="app-btn "> 
+          <img src="https://freelogopng.com/images/all_img/1664287128google-play-store-logo-png.png" alt="Google Play"class=" rounded image-logo">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contect" class="bg-dark text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <!-- About -->
+        <div class="col-12 col-md-4">
+          <h5 class="mb-3">About our car dealership information</h5>
+          <p>Experience the thrill of driving excellence. Premium super cars, customized for your lifestyle delivered with precision.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="https://www.facebook.com/nget.meas.2025" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light fs-4"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-light fs-4"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light fs-4"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+            <li><a href="#menu" class="text-light text-decoration-none">Menu</a></li>
+            <li><a href="#app" class="text-light text-decoration-none">App</a></li>
+            <li><a href="#contect" class="text-light text-decoration-none">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-6 col-md-3">
+          <h5 class="mb-3">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-telephone-fill me-2"></i> +855 966 698 074</li>
+            <li><i class="bi bi-envelope-fill me-2"></i> ngmeas@gmail.com</li>
+            <li><i class="bi bi-geo-alt-fill me-2"></i> Phnom Penh, Cambodia</li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-12 col-md-3">
+          <h5 class="mb-3">Subscribe</h5>
+          <p class="text-muted">Get the latest updates and offers directly to your inbox.</p>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Email address">
+            <button class="btn btn-success">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <hr class="my-4 bg-light">
+      <p class="text-center mb-0">&copy; 2025 NGM Auto Car. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+<script src="./index.js"></script>
+</html>
+
+
