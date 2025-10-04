@@ -8,6 +8,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="./style.css">
+
+<style>
+
+  
+</style>
+
 </head>
 <body>
 <!-- Navbar -->
@@ -38,7 +44,7 @@
           </li>
         </ul>
         <form class="d-flex align-items-center mt-3 mt-md-0 gap-2" role="search">
-          <input class="form-control mt-2" type="search" placeholder="Search Find Model" aria-label="Search" />
+          <input id="search-input" class="form-control mt-2" type="search" placeholder="Search Find Model" aria-label="Search" />
           <i style="cursor: pointer;"  class="bi bi-shop fs-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"></i>
           <div class=" active-cart">0</div>
         </form>
@@ -173,8 +179,62 @@
 
 
 
-</body>
 
+
+
+<!-- Offcanvas Cart Payments -->
+<div class="offcanvas offcanvas-end  offcanvas-cart" tabindex="-1" id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-semibold" id="offcanvasRightLabel"><i class="bi bi-cart3 me-2"></i>My Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column">
+
+    <!-- Cart Items -->
+    <div class="cart-items flex-grow-1 overflow-auto pe-2">
+     
+
+      <!-- Item 2 -->
+      <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+        <img src="https://img.freepik.com/free-photo/organic-tomatoes_144627-15857.jpg"
+          class="rounded" style="width: 70px; height: 70px; object-fit: cover;" alt="">
+        <div class="ms-3 flex-grow-1">
+          <h6 class="mb-1">Tomatoes</h6>
+          <p class="text-success fw-semibold mb-1">$2.00</p>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-secondary">-</button>
+            <span>2</span>
+            <button class="btn btn-sm btn-outline-secondary">+</button>
+          </div>
+        </div>
+        <button class="btn btn-sm btn-outline-danger ms-2"><i class="bi bi-trash"></i></button>
+      </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="border-top pt-3">
+      <div class="d-flex justify-content-between">
+        <span>Subtotal</span>
+        <span class="fw-semibold">$5.50</span>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span>Delivery</span>
+        <span class="fw-semibold">$1.00</span>
+      </div>
+      <div class="d-flex justify-content-between fs-5 fw-bold mt-2">
+        <span>Total</span>
+        <span>$6.50</span>
+      </div>
+      <button class="btn btn-success w-100 mt-3"><i class="bi bi-credit-card me-2"></i>Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
 <script src="./index.js"></script>
 </html>
 
