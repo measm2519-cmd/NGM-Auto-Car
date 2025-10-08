@@ -10,20 +10,16 @@ const Displayproducts = (products = cart) => {
             src="${item.image}" alt="">
           <div class=" w-100 px-2 py-2">
             <h5 class="card-title">${item.name}</h5>
-            <p class="card-text flex-grow-1">${item.description.substring(
-              0,
-              40
-            )}...</p>
+            <p class="card-text flex-grow-1">${item.description.substring(0,40)}...</p>
 
             <h5  style="font-size: 15px;" class="card-title">${
               item.category
             }</h5>
-            <p class="text-success fw-semibold fs-5">${item.price}</p>
+            <p class="text-success fw-semibold fs-5">$ ${item.price}</p>
           </div>
           <div class=" w-100 px-2">
-           <button type="button" onclick="AddtoCart(${
-             item.id
-           })"  class="btn btn-primary mt-auto w-50 ">Add to Cart</button>
+           <button type="button" onclick="AddtoCart(${item.id})" 
+            class="btn btn-primary mt-auto w-50 ">Add to Cart</button>
           </div>
         </div>
       </div>`;
@@ -69,7 +65,13 @@ const AddtoCart = (productId) => {
   } else {
     cartItem.push({ ...products, qty: 1 });
   }
-  alert(`${products.name} Add To Cart`);
+  Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: `${products.name} Add Your Cart`,
+  showConfirmButton: false,
+  timer: 1500
+});
   Updatecart();
 };
 
@@ -97,7 +99,7 @@ const Updatecart = () => {
         <span>Total</span>
         <span>$0</span>
       </div>
-      <button onclick="removeFromCart(${item.id})" class="btn btn-sm btn-outline-danger ms-2"><i class="bi bi-trash"></i></button>`;
+      <button onclick="Checkout()" class="btn btn-sm btn-outline-danger ms-2"><i class="bi bi-trash"></i></button>`;
     document.getElementById("cart-sumary").innerHTML = show;
   } else {
     cartItem.forEach((item) => {
@@ -119,7 +121,7 @@ const Updatecart = () => {
     tocart.innerHTML = showitem;
     // total
     let subtotal = cartItem.reduce((sum, pro) => sum + pro.qty * pro.price, 0);
-    let delivery = 1;
+    let delivery = 150 ;
     let total = subtotal + delivery;
     show += `<div class="d-flex justify-content-between">
         <span>Subtotal</span>
@@ -127,13 +129,13 @@ const Updatecart = () => {
       </div>
       <div class="d-flex justify-content-between">
         <span>Delivery</span>
-        <span class="fw-semibold">${delivery} $</span>
+        <span class="fw-semibold">${delivery}$</span>
       </div>
       <div class="d-flex justify-content-between fs-5 fw-bold mt-2">
         <span>Total</span>
         <span>${total} $</span>
       </div>
-      <button class="btn btn-success w-100 mt-3"><i class="bi bi-credit-card me-2"></i>Proceed to Checkout</button>`;
+      <button onclick="Checkout()" class="btn btn-success w-100 mt-3"><i class="bi bi-credit-card me-2"></i>Proceed to Checkout</button>`;
 
     document.getElementById("cart-sumary").innerHTML = show;
   }
@@ -158,3 +160,26 @@ const UpdateQty = (productId, chang) => {
     }
   }
 };
+
+
+// Checkout
+
+const Checkout = () =>{
+  if(cartItem.length === 0){
+    
+    Swal.fire({
+  icon: "error",
+  title: "Your Cart Is Empty",
+  text: "PLease Order Product!",
+  
+  });
+  }else{
+    cartItem=[]
+    Updatecart()
+    Swal.fire({
+  title: "Thank For Order",
+  text: "Nice To Meet You..",
+  icon: "success"
+});
+  }
+}
